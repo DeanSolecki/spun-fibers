@@ -191,3 +191,5 @@ gulp.task('rails', shell.task([
 ]));
 
 gulp.task('serve:full-stack', ['rails', 'server']);
+
+gulp.task('heroku:production', [default]);
