@@ -11,7 +11,6 @@ var gulp     = require('gulp');
 var rimraf   = require('rimraf');
 var router   = require('front-router');
 var sequence = require('run-sequence');
-var shell = require('gulp-shell');
 
 // Check for --production flag
 var isProduction = !!(argv.production);
@@ -150,11 +149,6 @@ gulp.task('server', ['build'], function() {
       host: 'localhost',
       fallback: 'index.html',
       livereload: true,
-			proxies: [
-				{
-					source: '/api', target: 'http://localhost:3000/api'
-				}
-			],
       open: true
     }))
   ;
@@ -179,11 +173,3 @@ gulp.task('default', ['server'], function () {
   // Watch app templates
   gulp.watch(['./client/templates/**/*.html'], ['copy:templates']);
 });
-
-gulp.task('rails', shell.task([
-	'cd ..',
-	'rails s',
-	'cd frontend'
-]));
-
-gulp.task('serve:full-stack', ['rails', 'server']);
