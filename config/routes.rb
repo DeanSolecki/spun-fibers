@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :img_url_lists, except: [:new, :edit]
-  resources :size_lists, except: [:new, :edit]
-  resources :sizes, except: [:new, :edit]
-  resources :img_urls, except: [:new, :edit]
-  resources :items, except: [:new, :edit]
+	scope '/api' do
+		resources :img_url_lists, except: [:new, :edit]
+		resources :size_lists, except: [:new, :edit]
+		resources :sizes, except: [:new, :edit]
+		resources :img_urls, except: [:new, :edit]
+		resources :items, except: [:new, :edit]
+	end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -52,13 +52,6 @@ RSpec.describe SizesController, :type => :controller do
     end
   end
 
-  describe "GET new" do
-    it "assigns a new size as @size" do
-      get :new, {}, valid_session
-      expect(assigns(:size)).to be_a_new(Size)
-    end
-  end
-
   describe "GET edit" do
     it "assigns the requested size as @size" do
       size = Size.create! valid_attributes

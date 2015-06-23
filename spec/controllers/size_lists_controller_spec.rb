@@ -52,13 +52,6 @@ RSpec.describe SizeListsController, :type => :controller do
     end
   end
 
-  describe "GET new" do
-    it "assigns a new size_list as @size_list" do
-      get :new, {}, valid_session
-      expect(assigns(:size_list)).to be_a_new(SizeList)
-    end
-  end
-
   describe "GET edit" do
     it "assigns the requested size_list as @size_list" do
       size_list = SizeList.create! valid_attributes

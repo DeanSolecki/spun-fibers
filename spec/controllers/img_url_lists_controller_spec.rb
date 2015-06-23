@@ -52,13 +52,6 @@ RSpec.describe ImgUrlListsController, :type => :controller do
     end
   end
 
-  describe "GET new" do
-    it "assigns a new img_url_list as @img_url_list" do
-      get :new, {}, valid_session
-      expect(assigns(:img_url_list)).to be_a_new(ImgUrlList)
-    end
-  end
-
   describe "GET edit" do
     it "assigns the requested img_url_list as @img_url_list" do
       img_url_list = ImgUrlList.create! valid_attributes

@@ -52,13 +52,6 @@ RSpec.describe ImgUrlsController, :type => :controller do
     end
   end
 
-  describe "GET new" do
-    it "assigns a new img_url as @img_url" do
-      get :new, {}, valid_session
-      expect(assigns(:img_url)).to be_a_new(ImgUrl)
-    end
-  end
-
   describe "GET edit" do
     it "assigns the requested img_url as @img_url" do
       img_url = ImgUrl.create! valid_attributes

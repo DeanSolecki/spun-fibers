@@ -52,13 +52,6 @@ RSpec.describe ItemsController, :type => :controller do
     end
   end
 
-  describe "GET new" do
-    it "assigns a new item as @item" do
-      get :new, {}, valid_session
-      expect(assigns(:item)).to be_a_new(Item)
-    end
-  end
-
   describe "GET edit" do
     it "assigns the requested item as @item" do
       item = Item.create! valid_attributes
