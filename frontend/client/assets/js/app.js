@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('application', [
+var app = angular.module('application', [
     'ui.router',
     'ngAnimate',
 
