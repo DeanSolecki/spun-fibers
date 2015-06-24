@@ -6,7 +6,8 @@
 		"npm": "2.1.x"
 	},
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+		"postinstall": "gulp default"
   },
   "dependencies": {
     "front-router": "^1.0.0",
