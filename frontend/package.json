@@ -4,7 +4,7 @@
   "scripts": {
     "start": "gulp"
   },
-  "devDependencies": {
+  "dependencies": {
     "front-router": "^1.0.0",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^1.0.1",
@@ -23,5 +23,7 @@
     "run-sequence": "^1.0.2",
     "yargs": "^3.6.0"
   },
+	"devDependencies": {
+	},
   "private": false
 }
