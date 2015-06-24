@@ -6,7 +6,7 @@
 		"npm": "2.1.x"
 	},
   "scripts": {
-    "start": "gulp"
+    "start": "gulp serve:full-stack"
   },
   "dependencies": {
     "front-router": "^1.0.0",
