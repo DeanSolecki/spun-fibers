@@ -1,6 +1,10 @@
 {
   "name": "foundation-apps-template",
   "version": "1.1.0",
+	"engines": {
+		"node": "0.12.x",
+		"npm": "2.1.x"
+	},
   "scripts": {
     "start": "gulp"
   },
