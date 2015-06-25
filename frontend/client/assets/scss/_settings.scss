@@ -98,8 +98,13 @@
 // $body-antialiased: true;
 
 // Application Colors
-// $primary-color: #00558b;
-// $secondary-color: #f1f1f1;
+$white: #fff;
+$gray-light: #e8edea;
+$gray-med: #e3e6e4;
+$gray-dark: #ababab;
+$black: #252625;
+$primary-color: $white;
+$secondary-color: #73c974;
 // $alert-color: #F04124;
 // $info-color: #A0D3E8;
 // $success-color: #43AC6A;
@@ -121,13 +126,13 @@
 // - - - - - - - - - - - - - - -
 
 // These are our named breakpoints. You can use them in our breakpoint function like this: @include breakpoint(medium) { // Medium and larger styles }
-// $breakpoints: (
-//   small: rem-calc(0),
-//   medium: rem-calc(640),
-//   large: rem-calc(1200),
-//   xlarge: rem-calc(1440),
-//   xxlarge: rem-calc(1920),
-// );
+$breakpoints: (
+  small: rem-calc(600),
+  medium: rem-calc(900),
+  large: rem-calc(1200),
+  xlarge: rem-calc(1440),
+  xxlarge: rem-calc(1920),
+);
 
 // All of the names in this list will be output as classes in your CSS, like small-12, medium-6, and so on.
 // $breakpoint-classes: (small medium large); 

@@ -2,8 +2,8 @@
 @import "foundation";
 
 .off-canvas ~ .grid-frame,
-.off-canvas {
-	background: $secondary-color;
+.offcanvas {
+	background: $gray-light;
 }
 
 .menu-group {
@@ -41,14 +41,14 @@
 			&> a {
 				font-size: 24px;
 				padding: 17px 0;
-				color: #222;
+				color: $gray-med;
 				&:hover {
-					background: #000;
-					color: #fff;
+					background: $gray-light;
+					color: $gray-med;
 				}
 			}
 			&.is-active > a {
-				color: #fff;
+				color: $black;
 			}
 		}
 	}
@@ -64,16 +64,14 @@ h1 {
 		font-size: 2.5rem;
 	}
 	&+ img {
-		border: 8px #000 solid;
+		border: 8px $black solid;
 	}
 }
 
-
 .menu-bar.condense {
-	text-transform: uppercase;
 	.is-active > a {
 		font-weight: 900;
-		background: #343434;
+		background: $gray-med;
 	}
 }
 
@@ -112,21 +110,21 @@ h1 {
 			font-size: 40px;
 			text-align: center;
 			display: block;
-			padding: 27px 0;
+			padding: 27px; 0;
 			font-family: $header-font-family;
 			transition: .2s all ease-out;
 			-webkit-text-overflow: ellipsis;
 			text-overflow: ellipsis;
 			&:hover {
-				background: #000;
-				color: #fff;
+				background: $gray-light;
+				color: $black;
 			}
 		}
 	}
 }
 
 hr {
-	border: 1px dashed #000;
+	border: 1px dashed $white;
 }
 
 dt, dd {
@@ -136,7 +134,6 @@ dt, dd {
 }
 dt {
 	clear: both;
-	text-transform: uppercase;
 	font-size: .8em;
 	line-height: 2.2em;
 	&::after {
@@ -181,10 +178,9 @@ dd {
 			display: block;
 			font-size: 24px;
 			line-height: 10;
-			text-transform: uppercase;
 			font-weight: 900;
 			background: $primary-color;
-			color: #fff;
+			color: $black;
 			@media screen and (max-width: 400px) {
 				font-size: 16px;
 			}
@@ -200,15 +196,4 @@ dd {
 }
 
 .grid-content {
-	&.films,
-	&.species,
-	&.planets,
-	&.people,
-	&.starships,
-	&.vehicles {
-		margin: 0 -1rem;
-		&> * {
-			width: calc( 100% + 1rem );
-		}
-	}
 }
