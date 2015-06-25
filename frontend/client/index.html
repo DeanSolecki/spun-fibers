@@ -3,22 +3,46 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation for Apps</title>
+    <title>Spunfibers</title>
     <link href="/assets/css/app.css" rel="stylesheet" type="text/css">
     <script src="/assets/js/foundation.js"></script>
-    <script src="/assets/js/templates.js"></script>
     <script src="/assets/js/routes.js"></script>
     <script src="/assets/js/app.js"></script>
   </head>
   <body>
-		<div zf-panel="" id="panel-top" position="top">
-			<a zf-close="" class="close-bottom">X</a>
-			<p>Some content from a off-canvas panel.</p>
-		<div>
-		<div class="content-box">
-			<a href="#" zf-open="panel-top" class="button">
-				Open muh panel, brah.
-			</a>
+		<zf-offcanvas position="left" id="menu">
+			<a zf-close="" class="close-button">x</a>
+			<h2>Spunfibers</h2>
+			<ul class="primary condense menu-bar vertical">
+				<li-sref-active="is-active"><a ui-sref="home">Home</a></li>
+				<li-sref-active="is-active"><a ui-sref="outfitter">Outfitter</a></li>
+				<li-sref-active="is-active"><a ui-sref="blog">Blog</a></li>
+				<li-sref-active="is-active"><a ui-sref="login">Login</a></li>
+				<li-sref-active="is-active"><a ui-sref="register">Register</a></li>
+			</ul>
+		</zf-offcanvas>
+		<div class="grid-frame vertical">
+			<div class="grid-content shrink" style="padding: 0;">
+				<div class="menu-group">
+					<div class="menu-group-left">
+						<ul class="primary condense menu-bar">
+							<li class="show-small"><a class="offcanvas-toggle" zf-hard-toggle="menu">&equiv;</a></li>
+							<li class="show-all" ui-sref-active="is-active"><a ui-sref="home"><strong>Spunfibers</strong></a></li>
+							<li ui-sref-active="is-active"><a ui-sref="home">Home</a></li>
+							<li ui-sref-active="is-active"><a ui-sref="outfitter">Outfitter</a></li>
+							<li ui-sref-active="is-active"><a ui-sref="blog">Blog</a></li>
+						</ul>
+					</div>
+					<div class="menu-group-right shrink">
+						<ul class="primary condense menu-bar">
+							<li ui-sref-active="is-active"><a ui-sref="login">Login</a></li>
+							<li ui-sref-active="is-active"><a ui-sref="register">Register</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<base href="/">
+			<div ng-class="['ui-animation']" class="grid-frame vertical fadeIn easeInOut" ui-view></div>
 		</div>
   </body>
 </html>
