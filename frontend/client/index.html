@@ -11,14 +11,14 @@
     <script src="/assets/js/app.js"></script>
   </head>
   <body>
-    <div class="grid-frame vertical">
-      <div class="grid-content shrink" style="padding: 0;">
-        <ul class="primary condense menu-bar">
-          <li><a><strong>Foundation for Apps</strong></a></li>
-        </ul>
-      </div>
-      <div ui-view class="grid-content">
-      </div>
-    </div>
+		<div zf-panel="" id="panel-top" position="top">
+			<a zf-close="" class="close-bottom">X</a>
+			<p>Some content from a off-canvas panel.</p>
+		<div>
+		<div class="container">
+			<a href="#" zf-open="panel-top" class="button">
+				Open muh panel, brah.
+			</a>
+		</div>
   </body>
 </html>
