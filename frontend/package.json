@@ -6,8 +6,7 @@
     "npm": "2.1.x"
   },
   "scripts": {
-    "start": "node app.js",
-		"postinstall": "debug:sass"
+    "start": "node app.js"
   },
   "dependencies": {
     "front-router": "^1.0.0",
