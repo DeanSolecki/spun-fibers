@@ -12,6 +12,7 @@ var rimraf   = require('rimraf');
 var router   = require('front-router');
 var sequence = require('run-sequence');
 var shell = require('gulp-shell');
+var debug = require('gulp-debug');
 
 // Check for --production flag
 var isProduction = !!(argv.production);
@@ -117,6 +118,22 @@ gulp.task('sass', function () {
   ;
 });
 
+// debug sass
+gulp.task('run-sass-debug', function () {
+  return gulp.src('client/assets/scss/app.scss')
+		.pipe(debug())
+    .pipe($.sass({
+      includePaths: paths.sass,
+      outputStyle: (isProduction ? 'compressed' : 'nested'),
+      errLogToConsole: true
+    }))
+    .pipe($.autoprefixer({
+      browsers: ['last 2 versions', 'ie 10']
+    }))
+    .pipe(gulp.dest(bases.dist + 'assets/css/'))
+  ;
+});
+
 // Compiles and copies the Foundation for Apps JavaScript, as well as your app's custom JS
 gulp.task('uglify', ['uglify:foundation', 'uglify:app'])
 
@@ -193,3 +210,5 @@ gulp.task('rails', shell.task([
 gulp.task('serve:full-stack', ['rails', 'server']);
 
 gulp.task('heroku:production', ['build']);
+
+gulp.task('debug:sass', ['run-sass-debug']);
