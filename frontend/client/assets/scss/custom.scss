@@ -1,6 +1,6 @@
 .off-canvas ~ .grid-frame,
 .off-canvas {
-	background: $secondary-color;
+	background: $gray-light;
 }
 
 .menu-group {
@@ -75,7 +75,7 @@ h1 {
 }
 
 .menu-group {
-	background: $primary-color;
+	background: $white;
 	@include breakpoint(medium) {
 		li.show-small {
 			display: none;
@@ -180,7 +180,7 @@ dd {
 			line-height: 10;
 			text-transform: uppercase;
 			font-weight: 900;
-			background: $primary-color;
+			background: $white;
 			color: #fff;
 			@media screen and (max-width: 400px) {
 				font-size: 16px;
