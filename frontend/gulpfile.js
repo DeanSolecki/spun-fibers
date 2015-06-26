@@ -190,14 +190,6 @@ gulp.task('rails', shell.task([
 	'cd frontend'
 ]));
 
-gulp.task('rmPublic', shell.task([
-	'cd .. && rm -rf public && cd frontend'
-]));
-
-gulp.task('buildProd', function() {
-	sequence('rmPublic', 'build');
-});
-
 gulp.task('serve:full-stack', ['rails', 'server']);
 
-gulp.task('heroku:production', ['buildProd']);
+gulp.task('heroku:production', ['build']);
