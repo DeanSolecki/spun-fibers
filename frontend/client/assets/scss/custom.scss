@@ -1,12 +1,26 @@
 // general settings
-.grid-frame {
+.off-canvas ~ .grid-frame {
 	background: $gray-med;
 }
 
 // Menu-bar
-
 .menu-group {
 	border-bottom: 8px solid $gray-light;
+	background: $primary-color;
+	@include breakpoint(medium) {
+		li.show-small {
+			display: none;
+		}
+	}
+	@include breakpoint(medium down) {
+		li {
+			display: none;
+		}
+		li.show-small,
+		li.show-all {
+			display: flex;
+		}
+	}
 }
 
 .menu-bar.primary > li > a {
@@ -28,4 +42,23 @@
 
 .menu-bar.primary .is-active.show-all > a {
 	background: $primary-color;
+}
+
+.close-icon {
+	overflow: hidden;
+}
+
+.off-canvas > h4 {
+	padding-left: .4rem;
+	padding-top: 1rem;
+	padding-bottom: .4rem;
+}
+
+.off-canvas .menu-bar.primary li > a > h5 {
+	padding-left: 2rem;
+}
+
+.off-canvas.left {
+	box-shadow: none;
+	border-right: .2rem solid $gray-light;
 }
