@@ -97,7 +97,7 @@ $serif-font-family: "Source Serif Pro", "Georgia", serif;
 $sans-font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
 
 // We use these to control various global styles
-// $body-background: #e8edea;
+// $body-background: #fff;
 // $body-font-color: #222;
 $body-font-family: $serif-font-family;
 $body-font-weight: $font-weight-light;
@@ -438,13 +438,13 @@ $header-font-style: none;
 
 // $menubar-fontsize: 1rem;
 // $menubar-background: $black;
-// $menubar-background-hover: smartscale($menubar-background, 7%);
+// $menubar-background-hover: smartscale($secondary-color, -60%);
 // $menubar-background-active: $secondary-color;
 // $menubar-color: isitlight($menubar-background);
 // $menubar-color-hover: $menubar-color;
 // $menubar-color-active: $secondary-color;
 
-$menubar-item-padding: .2rem;
+$menubar-item-padding: .4rem;
 // $menubar-icon-size: 25px;
 // $menubar-icon-spacing: $menubar-item-padding; 
 

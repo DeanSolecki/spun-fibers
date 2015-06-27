@@ -11,29 +11,39 @@
     <script src="/assets/js/app.js"></script>
   </head>
   <body>
-		<zf-offcanvas id="menu" position="left">
-			<h1>Off canvas</h1>
-			<a zf-close="" class="close-button">x</a>
+		<zf-offcanvas position="left" id="menu">
+			<a zf-close="close-button"><img zf-iconic="" icon="circle-x" size="small"></a>
+			<h4>Spunfibers</h4>
+			<ul class="primary condense menu-bar vertical">
+				<li ui-sref-active="is-active"><a ui-sref="home">Home</a></li>
+				<li ui-sref-active="is-active"><a ui-sref="outfitter">Outfitter</a></li>
+				<li ui-sref-active="is-active"><a ui-sref="blog">Blog</a></li>
+				<li ui-sref-active="is-active"><a ui-sref="login">Login</a></li>
+				<li ui-sref-active="is-active"><a ui-sref="register">Register</a></li>
+			</ul>
 		</zf-offcanvas>
-		<div class="menu-group primary">
-			<div class="menu-group-left">
-				<ul class="icon-left menu-bar primary">
-					<li><a href="#"><h4>Spunfibers</h4></a></li>
-					<li class="is-active"><a href="#"><img zf-iconic="" icon="home" size="small" class="iconic-color-primary"><h4>Home</h4></a></li>
-					<li><a href="#"><h4>Outfitter</h4></a></li>
-					<li><a href="#"><h4>Blog</h4></a></li>
-				</ul>
-			</div>
-			<div class="menu-group-right">
-				<ul class="icon-left primary menu-bar">
-					<li><a href="#"><img zf-iconic="" icon="person" size="small" class="iconic-color-primary"><h4>Login</h4></a></li>
-					<li><a href="#"><img zf-iconic="" icon="account" size="small" class="iconic-color-primary"><h4>Register</h4></a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="grid-frame">
-			<a zf-toggle="menu" class="button">Open/Close Off-canvas</a>
-		</div>
-		<base href="/">
+		<div class="grid-frame vertical">
+			<div class="grid-content shrink" style="padding: 0;">
+				<div class="menu-group">
+					<div class="menu-group-left">
+						<ul class="primary condense menu-bar icon-left">
+							<li class="show-small"><a class="offcanvas-toggle" zf-hard-toggle="menu"><h4>&equiv;</h4></a></li>
+							<li class="show-all" ui-sref-active="is-active"><a ui-sref="home"><h4>Spunfibers</h4></a></li>
+							<li ui-sref-active="is-active"><a ui-sref="home"><img zf-iconic="" icon="home" size="small" class="iconic-color-primary"><h4>Home</h4></a></li>
+							<li ui-sref-active="is-active"><a ui-sref="outfitter"><h4>Outfitter</h4></a></li>
+							<li ui-sref-active="is-active"><a ui-sref="blog"><h4>Blog</h4></a></li>
+						</ul>
+					</div><!-- end .menu-group-left -->
+					<div class="menu-group-right">
+						<ul class="primary condense menu-bar icon-left">
+							<li ui-sref-active="is-active"><a ui-sref="login"><img zf-iconic="" icon="person" size="small" class="iconic-color-primary"><h4>Login</h4></a></li>
+							<li ui-sref-active="is-active"><a ui-sref="register"><h4>Register</h4></a></li>
+						</ul>
+					</div><!-- end .menu-group-right -->
+				</div><!-- end .menu-group -->
+			</div><!-- end .grid-content -->
+			<base href="/"/>
+			<div ng-class="['ui-animation']" class="grid-frame vertical fadeIn easeInOut" ui-view></div>
+		</div><!-- end .grid-frame -->
   </body>
 </html>
