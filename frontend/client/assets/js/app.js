@@ -10,6 +10,8 @@ var app = angular.module('application', [
     'foundation.dynamicRouting',
     'foundation.dynamicRouting.animations'
   ])
+		.controller('HomeCtrl', ["$scope", "$state", function($scope, $state) {
+		}])
     .config(config)
     .run(run)
   ;

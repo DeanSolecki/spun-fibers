@@ -28,8 +28,13 @@
 	padding-top: .1rem;
 }
 
-.menu-bar.primary > li > a > h4 {
+.menu-bar.primary > li > a > h4,
+.menu-bar.primary > li > a > h2{
 	padding-top: .2rem;
+}
+
+.menu-bar.primary > li.panel-icon > a:hover {
+	background: $primary-color;
 }
 
 .menu-bar.primary > li > a:hover {
@@ -46,6 +51,7 @@
 
 .close-icon {
 	overflow: hidden;
+	padding-right: 0;
 }
 
 .off-canvas > h4 {
@@ -62,3 +68,9 @@
 	box-shadow: none;
 	border-right: .2rem solid $gray-light;
 }
+
+.off-canvas {
+	overflow: auto;
+}
+
+// grid container
