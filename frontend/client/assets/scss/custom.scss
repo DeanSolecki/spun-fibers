@@ -1,0 +1,18 @@
+// Menu-bar
+.menu-group {
+	border-bottom: 8px solid $gray-light;
+}
+
+.menu-group.primary .menu-bar > li > a > h4 {
+	padding-right: .6rem;
+	padding-top: .3rem;
+	padding-bottom: .1rem;
+}
+
+.menu-group.primary .menu-bar .is-active > a:hover {
+	background: smartscale($secondary-color, -7%);
+}
+
+.menu-group.primary .menu-bar .is-active > a {
+	background: $secondary-color;
+}

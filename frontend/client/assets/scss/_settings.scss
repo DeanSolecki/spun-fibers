@@ -86,14 +86,21 @@
 // $headers: "h1,h2,h3,h4,h5,h6";
 
 // We use these to define default font weights
-// $font-weight-normal: normal;
-// $font-weight-bold: bold;
+$font-weight-extra-light: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+// Fonts
+$serif-font-family: "Source Serif Pro", "Georgia", serif;
+$sans-font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
 
 // We use these to control various global styles
 // $body-background: #e8edea;
 // $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $body-font-weight: $font-weight-normal;
+$body-font-family: $serif-font-family;
+$body-font-weight: $font-weight-light;
 // $body-font-style: normal;
 // $body-antialiased: true;
 
@@ -141,10 +148,11 @@ $breakpoints: (
 // - - - - - - - - - - - - - - -
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
-// $header-font-weight: $font-weight-normal;
-// $header-font-style: $font-weight-normal;
+$header-font-family: $sans-font-family;
+$header-font-weight: $font-weight-extra-light;
+$header-font-style: none;
 // $header-font-color: #222;
+
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -429,14 +437,14 @@ $breakpoints: (
 // - - - - - - - - - - - - - - -
 
 // $menubar-fontsize: 1rem;
-// $menubar-background: #fff;
+// $menubar-background: $black;
 // $menubar-background-hover: smartscale($menubar-background, 7%);
-// $menubar-background-active: $menubar-background-hover;
+// $menubar-background-active: $secondary-color;
 // $menubar-color: isitlight($menubar-background);
 // $menubar-color-hover: $menubar-color;
-// $menubar-color-active: $menubar-color-hover;
+// $menubar-color-active: $secondary-color;
 
-// $menubar-item-padding: $global-padding;
+$menubar-item-padding: .2rem;
 // $menubar-icon-size: 25px;
 // $menubar-icon-spacing: $menubar-item-padding; 
 
