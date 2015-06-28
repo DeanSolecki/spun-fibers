@@ -9,10 +9,19 @@ gem 'spring', :group => :development
 
 
 gem 'pg'
-gem 'rspec-rails', :group => :test
+
+# user authentication
 gem 'devise_token_auth'
 gem 'omniauth'
 
+# integration testing
+group :test do
+	gem 'rspec-rails'
+	gem 'capybara'
+	gem 'selenium-webdriver'
+	gem 'database_cleaner'
+	gem 'compass'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

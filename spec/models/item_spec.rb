@@ -13,3 +13,10 @@ RSpec.describe Item, :type => :model do
 		it { should_not be_valid }
 	end
 end
+
+feature 'Items', js: true do
+	scenario 'view' do
+		visit 'localhost:3000/#!/items'
+		expect(page).to have_content('Item One')
+	end
+end

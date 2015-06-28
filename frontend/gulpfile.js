@@ -49,7 +49,10 @@ var paths = {
   ],
   // These files are for your app's JavaScript
   appJS: [
-    'client/assets/js/app.js'
+    'client/assets/js/app.js',
+		'bower_components/angular-cookie/angular-cookie.js',
+		'bower_components/ng-token-auth/dist/ng-token-auth.js',
+		'bower_components/angularjs-rails-resource/angularjs-rails-resource.js'
   ]
 }
 

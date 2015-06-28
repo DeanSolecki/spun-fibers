@@ -8,8 +8,14 @@ var app = angular.module('application', [
     //foundation
     'foundation',
     'foundation.dynamicRouting',
-    'foundation.dynamicRouting.animations'
+    'foundation.dynamicRouting.animations',
+
+		//project mods
+		'ng-token-auth'
   ])
+		.controller('ItemsCtrl', ['$scope', function($scope) {
+			$scope.items = ['Item One', 'Item Two'];
+		}])
 		.controller('HomeCtrl', ["$scope", "$state", function($scope, $state) {
 		}])
     .config(config)
