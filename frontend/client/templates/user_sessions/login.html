@@ -1,0 +1,18 @@
+---
+name: login
+url: /user_sessions/login
+---
+
+<div class="grid-container">
+	<form ng-init="loginForm = {}">
+		<label>
+			Email
+			<input type="email" placeholder="Email" ng-model="loginForm.email" required="required" name="email">
+		</label>
+		<label>
+			Password
+			<input type="password" placeholder="Password" ng-model="loginForm.password" required="required" name="password">
+		</label>
+		<a href="#" ng-click="submitLogin(loginForm)" class="button secondary">Login</a>
+	</form>
+</div>

@@ -1,0 +1,23 @@
+---
+name: register
+url: /user_sessions/register
+---
+
+<div class="grid-container">
+	<h2>Create an account!</h2>
+	<form ng-init="registrationForm = {}">
+		<label>
+			Email
+			<input type="email" ng-model="registrationForm.email" required="required" name="email">
+		</label>
+		<label>
+			Password
+			<input type="password" ng-model="registrationForm.password" required="required" name="password">
+		</label>
+		<label>
+			Confirm Password
+			<input type="password" ng-model="registrationForm.password_confirmation" required="required" name="pasword_confirmation">
+		</label>
+		<a href="#" class="button secondary" ng-click="submitRegistration(registrationForm)">Submit</a>
+	</form>
+</div>

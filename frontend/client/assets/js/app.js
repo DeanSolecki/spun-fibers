@@ -13,12 +13,27 @@ var app = angular.module('application', [
 		//project mods
 		'ng-token-auth'
   ])
+		.controller('RegCtrl', ['$scope', '$auth', function($scope, $auth) {
+			$scope.handleRegClick = function() {
+				$auth.submitRegistration($scope.registrationForm)
+					.then(function(resp) {
+						// handle success response
+					})
+					.catch(function(resp) {
+						// handle error response
+					});
+			};
+		}])
 		.controller('ItemsCtrl', ['$scope', function($scope) {
 			$scope.items = ['Item One', 'Item Two'];
 		}])
 		.controller('HomeCtrl', ["$scope", "$state", function($scope, $state) {
 		}])
-    .config(config)
+    .config(config, function($authProvider) {
+			$authProvider.configure({
+				apiUrl: '/api'
+			})
+		})
     .run(run)
   ;
 
