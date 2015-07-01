@@ -4,7 +4,7 @@ url: /user_sessions/login
 controller: LoginCtrl
 ---
 
-<div class="grid-block">
+<div class="grid-container">
 	<form ng-init="loginForm = {}">
 		<label>
 			Email
@@ -16,7 +16,5 @@ controller: LoginCtrl
 		</label>
 		<a ng-click="submitLogin(loginForm)" class="button secondary">Login</a>
 	</form>
-	
-	<a class="button" href="#" title="Error With Input" content="blank" color="alert" autoclose="3000" zf-notify="error-notif">Test Button</a>
 	<zf-notification-set id="error-notif" position="bottom-right"></zf-notification-set>
 </div>
