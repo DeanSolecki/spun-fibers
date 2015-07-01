@@ -22,8 +22,10 @@
 				<li ui-sref-active="is-active"><a ui-sref="home"><h5>Home</h5></a></li>
 				<li ui-sref-active="is-active"><a ui-sref="outfitter"><h5>Outfitter</h5></a></li>
 				<li ui-sref-active="is-active"><a ui-sref="blog"><h5>Blog</h5></a></li>
-				<li ui-sref-active="is-active"><a ui-sref="login"><h5>Login</h5></a></li>
-				<li ui-sref-active="is-active"><a ui-sref="register"><h5>Register</h5></a></li>
+				<li ng-show="!user.id" ui-sref-active="is-active"><a ui-sref="login"><h5>Login</h5></a></li>
+				<li ng-show="user.id" ui-sref-active="is-active"><a ui-sref="logout"><h5>Logout</h5></a></li>
+				<li ng-show="!user.id" ui-sref-active="is-active"><a ui-sref="register"><h5>Register</h5></a></li>
+				<li ng-show="user.id" ui-sref-active="is-active"><a ui-sref="settings"><h5>Settings</h5></a></li>
 			</ul>
 		</zf-offcanvas>
 		<div class="grid-frame vertical">
@@ -40,13 +42,25 @@
 					</div><!-- end .menu-group-left -->
 					<div class="menu-group-right">
 						<ul class="primary condense menu-bar icon-left">
-							<li ui-sref-active="is-active"><a ui-sref="login"><img zf-iconic="" icon="person" size="small" class="iconic-color-primary"><h4>Login</h4></a></li>
-							<li ui-sref-active="is-active"><a ui-sref="register"><h4>Register</h4></a></li>
+							<li ng-show="!user.id" ui-sref-active="is-active">
+								<a ui-sref="login"><img zf-iconic="" icon="person" size="small" class="iconic-color-primary"><h4>Login</h4></a>
+							</li>
+							<li ng-show="user.id" ui-sref-active="is-active">
+								<a ui-sref="logout"><img zf-iconic="" icon="person" size="small" class="iconic-color-primary"><h4>Logout</h4></a>
+							</li>
+							<li ng-show="!user.id" ui-sref-active="is-active">
+								<a ui-sref="register"><h4>Register</h4></a>
+							</li>
+							<li ng-show="user.id" ui-sref-active="is-active">
+								<a ui-sref="settings"><img zf-iconic="" icon="cog" size="small" class="iconic-color-primary"><h4>Settings</h4></a>
+							</li>
 						</ul>
 					</div><!-- end .menu-group-right -->
 				</div><!-- end .menu-group -->
 			</div><!-- end .grid-content -->
-			<div ui-view></div>
+			<div class="grid-container">
+				<div ui-view></div>
+			</div>
 			<base href="/"/>
 		</div><!-- end .grid-frame -->
   </body>

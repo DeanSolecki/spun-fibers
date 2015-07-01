@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20150628152132) do
 
   create_table "img_urls", force: true do |t|
     t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "items", force: true do |t|
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20150628152132) do
     t.string   "store"
     t.string   "brand"
     t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "size_lists", force: true do |t|
@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 20150628152132) do
 
   create_table "sizes", force: true do |t|
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

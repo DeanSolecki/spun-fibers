@@ -1,0 +1,18 @@
+---
+name: settings
+url: /settings
+controller: SettingsCtrl
+---
+
+<div class="grid-container">
+	<h2>Account settings will live here.</h2>
+	<p>That's gonna be a lot of work</p>
+	</br>
+	<p>For now, here's a button to delete your account:</P>
+	<a zf-open="deleteModal" class="button alert">Delete</a>
+	<div zf-modal="" id="deleteModal">
+		<h3>Rearry?  Derete?  Rearry?</h3>
+		<a zf-close="" class="button secondary">Cancel</a>
+		<a ng-click="destroyAccount()" class="button alert">Delete</a>
+	</div>
+</div>
