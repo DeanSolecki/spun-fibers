@@ -5,24 +5,18 @@ controller: LoginCtrl
 ---
 
 <div class="grid-block">
-	<div class="small-12 medium-6 grid-block">
-		<form ng-init="loginForm = {}">
-			<label>
-				Email
-				<input type="email" placeholder="Email" ng-model="loginForm.email" required="required" name="email">
-			</label>
-			<label>
-				Password
-				<input type="password" placeholder="Password" ng-model="loginForm.password" required="required" name="password">
-			</label>
-			<a ng-click="submitLogin(loginForm)" class="button secondary">Login</a>
-		</form>
-	</div><!-- end grid-block -->
-
-	<div class="small-12 medium-6 grid-block">
-		<a class="button" href="#" title="Error With Input" content="blank" color="alert" autoclose="3000" zf-notify="error-notif">Test Button</a>
-		<zf-notification-set id="error-notif" position="bottom-right"></zf-notification-set>
-
-		<p>Error check: {{ msg }}</p>
-	</div><!-- end gridblock -->
+	<form ng-init="loginForm = {}">
+		<label>
+			Email
+			<input type="email" placeholder="Email" ng-model="loginForm.email" required="required" name="email">
+		</label>
+		<label>
+			Password
+			<input type="password" placeholder="Password" ng-model="loginForm.password" required="required" name="password">
+		</label>
+		<a ng-click="submitLogin(loginForm)" class="button secondary">Login</a>
+	</form>
+	
+	<a class="button" href="#" title="Error With Input" content="blank" color="alert" autoclose="3000" zf-notify="error-notif">Test Button</a>
+	<zf-notification-set id="error-notif" position="bottom-right"></zf-notification-set>
 </div>
