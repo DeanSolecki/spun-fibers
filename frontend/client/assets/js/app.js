@@ -86,11 +86,20 @@ var app = angular.module('application', [
 			});
 
 			$rootScope.$on('auth:registration-email-success', function() {
-				$state.go('confirm');
+				$state.go('confirm')
+					.then(FoundationApi.publish('notification',
+																			{ title: 'Success:',
+																				content: 'Registration submitted',
+																				color: 'secondary',
+																				autoclose: '9000' }));
 			});
 
 			$rootScope.$on('auth:login-success', function() {
-				$state.go('home');
+				Foundation.Api.publish('notification',
+															{ title: 'Success:',
+																content: 'You are now logged in',
+																color: 'success',
+																autoclose: '9000' });
 			});
 
 			$rootScope.$on('auth:account-destroy-success', function() {
