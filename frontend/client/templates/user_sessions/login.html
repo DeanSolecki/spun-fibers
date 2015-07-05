@@ -8,11 +8,11 @@ controller: LoginCtrl
 	<form ng-init="loginForm = {}">
 		<label>
 			Email
-			<input type="email" placeholder="Email" ng-model="loginForm.email" required="required" name="email">
+			<input type="email" autofocus ng-keyup="$event.keyCode == 13 ? loginClick() : null" placeholder="Email" ng-model="loginForm.email" required="required" name="email">
 		</label>
 		<label>
 			Password
-			<input type="password" placeholder="Password" ng-model="loginForm.password" required="required" name="password">
+			<input type="password" ng-keyup="$event.keyCode == 13 ? loginClick() : null" placeholder="Password" ng-model="loginForm.password" required="required" name="password">
 		</label>
 		<a ng-click="loginClick()" class="button secondary" ng-class="{'disabled': disableButtons }">Login</a>
 	</form>

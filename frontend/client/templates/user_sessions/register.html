@@ -9,15 +9,15 @@ controller: RegCtrl
 	<form ng-init="registrationForm = {}">
 		<label>
 			Email
-			<input type="email" ng-model="registrationForm.email" required="required" name="email">
+			<input type="email" autofocus ng-keyup="$event.keyCode == 13 ? regClick() : null" ng-model="registrationForm.email" required="required" name="email">
 		</label>
 		<label>
 			Password
-			<input type="password" ng-model="registrationForm.password" required="required" name="password">
+			<input type="password" ng-keyup="$event.keyCode == 13 ? regClick() : null" ng-model="registrationForm.password" required="required" name="password">
 		</label>
 		<label>
 			Confirm Password
-			<input type="password" ng-model="registrationForm.password_confirmation" required="required" name="pasword_confirmation">
+			<input type="password"  ng-keyup="$event.keyCode == 13 ? regClick() : null" ng-model="registrationForm.password_confirmation" required="required" name="pasword_confirmation">
 		</label>
 		<a class="button secondary" ng-click="regClick()" ng-class="{'disabled': disableButtons}">Submit</a>
 	</form>
