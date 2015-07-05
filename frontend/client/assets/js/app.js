@@ -60,6 +60,12 @@ var app = angular.module('application', [
 		.controller('SettingsCtrl', ['$scope', '$auth', '$state', function($scope, $auth, $state) {
 		}])
 
+		.controller('WelcomeCtrl', ['$scope', '$state', function($scope, $state) {
+			$scope.goLogin = function() {
+				$state.go('login');
+			};
+		}])
+
 		.controller('ItemsCtrl', ['$scope', function($scope) {
 			$scope.items = ['Item One', 'Item Two'];
 		}])
@@ -72,7 +78,7 @@ var app = angular.module('application', [
     .config(function($authProvider) {
 			$authProvider.configure({
 				apiUrl: '/api',
-				confirmationSuccessUrl: 'spunfibers.com'
+				confirmationSuccessUrl: '/user_sessions/welcome'
 			})
 		})
 		
