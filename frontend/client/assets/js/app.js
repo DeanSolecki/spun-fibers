@@ -72,7 +72,7 @@ var app = angular.module('application', [
     .config(function($authProvider) {
 			$authProvider.configure({
 				apiUrl: '/api',
-				confirmationSuccessUrl: 'http://www.spunfibers.com'
+				confirmationSuccessUrl: 'spunfibers.com'
 			})
 		})
 		
