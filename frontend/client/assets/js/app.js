@@ -78,7 +78,7 @@ var app = angular.module('application', [
     .config(function($authProvider) {
 			$authProvider.configure({
 				apiUrl: '/api',
-				confirmationSuccessUrl: '/user_sessions/welcome'
+				confirmationSuccessUrl: 'user_sessions/welcome'
 			})
 		})
 		
