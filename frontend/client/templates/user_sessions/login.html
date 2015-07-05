@@ -14,6 +14,6 @@ controller: LoginCtrl
 			Password
 			<input type="password" placeholder="Password" ng-model="loginForm.password" required="required" name="password">
 		</label>
-		<a ng-click="submitLogin(loginForm)" class="button secondary">Login</a>
+		<a ng-click="loginClick()" class="button secondary" ng-class="{'disabled': disableButtons }">Login</a>
 	</form>
 </div>

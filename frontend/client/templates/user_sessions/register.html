@@ -19,6 +19,6 @@ controller: RegCtrl
 			Confirm Password
 			<input type="password" ng-model="registrationForm.password_confirmation" required="required" name="pasword_confirmation">
 		</label>
-		<a class="button secondary" ng-click="submitRegistration(registrationForm)">Submit</a>
+		<a class="button secondary" ng-click="regClick()" ng-class="{'disabled': disableButtons}">Submit</a>
 	</form>
 </div>

@@ -13,15 +13,43 @@ var app = angular.module('application', [
 		//project mods
 		'ng-token-auth'
   ])
-		.controller('RegCtrl', ['$scope', '$auth', '$state', function($scope, $auth, $state) {
-			$scope.handleRegClick = function() {
-				$auth.submitRegistration($scope.registrationForm)
+		.controller('RegCtrl', ['$scope', '$auth', '$state', 'FoundationApi', function($scope, $auth, $state, FoundationApi) {
+			$scope.regClick = function() {
+				var patt = new RegExp(".+[@].+[.].+");
+				if(patt.test($scope.registrationForm.email)) {
+					$scope.disableButtons = true;
+					$auth.submitRegistration($scope.registrationForm)
+							.catch(function(resp) {
+								$scope.disableButtons = false;
+							});
+				}
+				else {
+					FoundationApi.publish('notification',
+																{ title: 'Error:',
+																	content: 'Is your email address correct?',
+																	color: 'alert',
+																	autoclose: '9000' });
+				};
 			};
 		}])
 
-		.controller('LoginCtrl', ['$scope', '$state', '$auth', function($scope, $state, $auth) {
-			$scope.handleLoginClick = function() {
-				$auth.submitLogin($scope.loginForm)
+		.controller('LoginCtrl', ['$scope', '$state', '$auth', 'FoundationApi', function($scope, $state, $auth, FoundationApi) {
+			$scope.loginClick = function() {
+				var patt = new RegExp(".+[@].+[.].+");
+				if(patt.test($scope.loginForm.email)) {
+					$scope.disableButtons = true;
+					$auth.submitLogin($scope.loginForm)
+						.catch(function(resp) {
+							$scope.disableButtons = false;
+						});
+				}
+				else {
+					FoundationApi.publish('notification',
+																{ title: 'Error:',
+																	content: 'Is your email address correct?',
+																	color: 'alert',
+																	autoclose: '9000' });
+				};
 			};
 		}])
 
@@ -30,9 +58,6 @@ var app = angular.module('application', [
 		}])
 
 		.controller('SettingsCtrl', ['$scope', '$auth', '$state', function($scope, $auth, $state) {
-			$scope.handleDeleteAccountClick = function() {
-				$auth.destroyAccount();
-			};
 		}])
 
 		.controller('ItemsCtrl', ['$scope', function($scope) {
@@ -55,7 +80,6 @@ var app = angular.module('application', [
 
     .run(['$rootScope', '$state', '$auth', 'FoundationApi', function($rootScope, $state, $auth, FoundationApi) {
 			$rootScope.$on('auth:login-error', function(ev, reason) {
-				setTimeout(function(){Console.log("timeout ended");}, '3000');
 				FoundationApi.publish('notification',
 															{ title: 'Error:',
 																content: reason.errors[0],
@@ -64,7 +88,6 @@ var app = angular.module('application', [
 			});
 
 			$rootScope.$on('auth:registration-email-error', function(ev, reason) {
-				setTimeout(function(){Console.log("timeout ended");}, '3000');
 				FoundationApi.publish('notification',
 															{ title: 'Error:',
 																content: reason.errors.full_messages[0],
@@ -74,7 +97,6 @@ var app = angular.module('application', [
 
 			$rootScope.$on('auth:logout-error', function(ev, reason) {
 				$state.go('home');
-				setTimeout(function(){Console.log("timeout ended");}, '3000');
 				FoundationApi.publish('notification',
 															{ title: 'Error:',
 																content: reason.errors[0],
@@ -83,7 +105,6 @@ var app = angular.module('application', [
 			});
 
 			$rootScope.$on('auth:account-destroy-error', function(ev, reason) {
-				setTimeout(function(){Console.log("timeout ended");}, '3000');
 				FoundationApi.publish('notification',
 															{ title: 'Error:',
 																content: reason.errors[0],
@@ -93,7 +114,6 @@ var app = angular.module('application', [
 
 			$rootScope.$on('auth:login-success', function() {
 				$state.go('home');
-				setTimeout(function(){Console.log("timeout ended");}, '3000');
 				FoundationApi.publish('notification',
 															{ title: 'Success:',
 																content: 'You are now logged in',
@@ -103,7 +123,6 @@ var app = angular.module('application', [
 
 			$rootScope.$on('auth:registration-email-success', function() {
 				$state.go('confirm');
-				setTimeout(function(){Console.log("timeout ended");}, '3000');
 				FoundationApi.publish('notification',
 															{ title: 'Success:',
 																content: 'Your registration was sent',
@@ -113,7 +132,6 @@ var app = angular.module('application', [
 
 			$rootScope.$on('auth:account-destroy-success', function() {
 				$state.go('home');
-				setTimeout(function(){Console.log("timeout ended");}, '3000');
 				FoundationApi.publish('notification',
 															{ title: 'Success:',
 																content: 'Your account was deleted',
@@ -123,7 +141,6 @@ var app = angular.module('application', [
 
 			$rootScope.$on('auth:logout-success', function() {
 				$state.go('home');
-				setTimeout(function(){Console.log("timeout ended");}, '3000');
 				FoundationApi.publish('notification',
 															{ title: 'Success:',
 																content: "You've been logged out",
