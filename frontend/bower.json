@@ -27,5 +27,8 @@
     "angularjs-rails-resource": "~2.0.0",
     "jquery": "~2.1.4",
     "ng-token-auth": "~0.0.25"
+  },
+  "resolutions": {
+    "angular": "1.3.20"
   }
 }
